@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-image">
+            <img src="../images/user.png" alt="">
+        </div>
+        <div>
+            <form action="" class="login-form" onsubmit="login(event)">
+                <div>
+                    <label for="">Username</label>
+                </div>
+                <div class="input-container">
+                    <img src="../images/uname.png" alt="" class="icon">
+                    <input type="text" name="" id="uname" required>
+                </div>
+                <div>
+                   
+                    <label for="">Password</label>
+                </div>
+                <div class="input-container">
+                    <img src="../images/padlock.png" alt="" class="icon">
+                    <input type="password" name="" id="pass" required>
+                </div>
+                <div class="forgotPassword">
+                    <p><a href="forgotpassword.html">Forgot Password?</a></p>
+                </div>
+                <div>
+                    <button>Sign In</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- script -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+     <script src="../js/login.js"></script>
+     
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdminPanel</title>
+    <link rel="stylesheet" href="../css/adminpanel.css">
+</head>
+<body>
+        <div class="sidebar">
+            <div>
+                <img src="../images/library.png" alt="">
+            </div>
+            <ul>
+                <li onclick="showDashboard()">Dashboard</li>
+                <li onclick="showManageBooks()">Manage Books</li>
+                <li>Manage Students</li>
+                <li>Transactions</li>
+                <li>Available Books</li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <!-- dashboard -->
+            <div class="dashboard-container" id="dashboard-container">
+                <h2 style="text-align: center; margin-top: 20px;">LMS Dashboard</h2>
+                <div class="dashboard">
+                    <div class="box">
+                        <p>Total Books</p>
+                        <p id="tBooks"></p>
+                    </div>
+                    <div class="box">
+                        <p>Total authors</p>
+                        <p id="tAuthors"></p>
+                    </div>
+                    <div class="box">
+                        <p>Total Members</p>
+                        <p id="tMembers"></p>
+                    </div>
+                    <div class="box">
+                        <p>Issued Books</p>
+                        <p id="iBooks"></p>
+                    </div>
+                    <div class="box">
+                        <p>Books to Return</p>
+                        <p id="rBooks"></p>
+                    </div>
+                    <div class="box">
+
+                    </div>
+                    <div class="box">
+
+                    </div>
+
+                </div>
+            </div>
+            <!-- books -->
+             <div class="book-container" id="book-container" style="display: none;">
+                <h2 style="text-align: center;margin-top: 20px;">Add books, Edit books, Delete books</h2>
+                <div class="manage-book">
+                    <div class="box" onclick="showAddBookForm()">
+                        <p>Add Book</p>
+                    </div>
+                    <div class="box">
+                        <p>Edit Book</p>
+                    </div>
+                    <div class="box">
+                        <p>Delete book</p>
+                    </div>
+                </div>
+                <!-- add book -->
+                <div class="add-book">
+                    <form action="" class="add-book-form" id="add-book-form" style="display: none;" onsubmit="submitBookDetails(event)">
+                        <div class="input-element">
+                            <div>
+                                <label for="">Book Title</label>
+                            </div>
+                            <div>
+                                <input type="text" required id="title" onblur="isBookAvailable()">
+                                <p id="bookAvailability"></p>
+                            </div> 
+                        </div>
+                        <div class="input-element">
+                            <div>
+                                <label for="">Genre</label>
+                            </div>
+                            <div>
+                                <input list="genres" type="text" id="genre" onkeyup="getGenres()" required> 
+                                <datalist id="genres">
+
+                                </datalist>
+                            </div>
+                        </div>
+                        <div class="input-element">
+                            <div>
+                                <label for="">Author</label>
+                            </div>
+                            <div>
+                                <input list="authors" type="text" id="author" required onkeyup="getAuthors()">
+                                <datalist id="authors">
+
+                                </datalist>
+                            </div>
+                        </div>
+                        <div class="input-element"> 
+                            <div>
+                                <label for="">Publication year</label>
+                            </div>
+                            <div>
+                                <input type="number" min="1980" id="year" required>
+                            </div>
+                            
+                        </div>
+                        <div class="input-element">
+                            <div>
+                                <label for="">Book Count</label>
+                            </div>
+                            <div>
+                                <input type="number" min="1" id="bookCount" required>
+                            </div>
+                           
+                        </div>
+                        <div class="input-element">
+                            <div>
+                                <label for="">Upload book image</label>
+                            </div>
+                           <div>
+                               <input type="file" accept="image/*" id="bookImage" required>
+                           </div>
+                           
+                        </div>
+                        <div>
+                            <input type="submit">
+                        </div>
+                    </form>
+                </div>
+             </div>
+        </div>
+            
+      
+    <script src="../js/adminpanel.js"></script>
+</body>
+</html>
